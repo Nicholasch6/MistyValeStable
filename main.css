@@ -1,12 +1,30 @@
-.boxed {
-  width: 50%;
-  margin-top: 50px;
-  margin-left: 25%;
-  margin-right: 25%;
-  font-size: 21px;
+body {
+  font-family: Hoefler Text,Baskerville Old Face,Garamond,Times New Roman,serif;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  grid-gap: 10px;
 }
 
-.banner {
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.boxed {
+  margin-top: 50px;
+  font-size: 21px;
+  grid-column: 2 / -1;
+}
+
+.boxed img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+#navbar {
   width: 100%;
   height: 44px;
   align-items: center;
@@ -14,11 +32,13 @@
   background-color: #7e96bc;
   overflow: hidden;
   text-align: center;
+  box-shadow: 2px 2px rgba(0,0,0,0.1);
+  grid-column: 1 / -1;
 }
+
 .footer {
   width: 100%;
   align-items: center;
-
   overflow: hidden;
   text-align: center;
 }
@@ -26,25 +46,17 @@
 .mainbody {
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 15px;
+  padding-top: 15px;
+  grid-column: 2;
 }
 
-.centImg{
-  padding-right:30%;
-  padding-left:30%;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-
-}
 
  .leftimg {
    max-width: 23%;
    max-height: 23%;
    float: left;
    border-radius: 25px;
+   padding:5px;
  }
 
  .rightimg {
@@ -58,14 +70,34 @@ img {
   padding: 10px;
 }
 
+#lessons {
+overflow: auto;
+padding-top: 30px;
+background-color: #62776a;
+grid-column: 1 / -1;
+}
+
+#training {
+  grid-column: 2;
+}
+
+#contact {
+  grid-column: 1 / -1;
+}
+
+#boarding {
+  padding-top: 30px;
+}
+
 .lesleft{
   float: left;
   max-width: 50%;
-  margin: 10px;
+
 }
 
 .lesright {
   float: right;
+  max-width: 50%;
 }
 
 .lesimg {
@@ -73,10 +105,12 @@ img {
   max-width: 50%;
   max-height: 50%;
   margin: auto;
+  padding: 15px;
 }
 
 .navOpt {
-
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 a {
@@ -85,53 +119,69 @@ a {
 }
 
 a:hover {
-  color: #546d46;
+  color: #cee4ed;
   text-decoration: none;
 }
 
 p {
   text-align: center;
 }
-
-.galImg {
-  width: 300px;
-  height: 300px;
-  padding: 15px;
-  Opacity: 0.5;
-  transition: 1s;
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
 }
 
-img.galImg:hover {
-  width: 400px;
-  height: 400px;
-  padding: 0px;
-  opacity: 1;
+h3 {
+  text-align: center;
+}
+h4 {
+  text-align: center;
 }
 
+a {
+  color: #3a4d6d;
+}
 
-#mainPic {
+.sticky {
+  position: fixed;
+  top: 0;
   width: 100%;
-  height: 100%;
-  max-width: 500px;
-  max-height: 500px;
+  z-index: 1;
 }
 
-#pupGalPic {
-  height: 100px;
-  width: 100px;
-  padding: 5px;
+.spanImg {
+  position: relative;
+  grid-column: 1 / -1;
 }
 
-img#pupGalPic:hover{
-opacity: 0.6;
+.spanImgOverlay{
+transition: .75s ease;
+opacity: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+text-align: center;
+background-color: grey;
+color: white;
+height: 100%;
+width: 100%;
+font-size: 32px;
+display: flex;
+justify-content: center; /* align horizontal */
+align-items: center; /* align vertical */
 }
 
-.pupSelect {
-  height: 50px;
-  width: 100%;
-  background-color: #252628;
-  color: white;
+.spamImgOverlay p {
+  margin-top: 100px;
+  height: 45px;
+ line-height: 45px;
 }
-button.pupSelect {
 
+
+.spanImg:hover .spanImgOverlay {
+  opacity: 0.7;
 }
